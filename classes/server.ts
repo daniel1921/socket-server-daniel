@@ -28,10 +28,11 @@ export default class Server {
             // console.log('cliente conectado');
             console.log(cliente.id);
           //DESCONECCIÓN METODO
-          socket.conectarCliente(cliente);
-          socket.desconectar(cliente);
+          socket.conectarCliente(cliente, this.io);
+          socket.desconectar(cliente, this.io);
           socket.mensaje(cliente, this.io);
           socket.login(cliente, this.io);
+          socket.obtenerUsuarios(cliente, this.io);
         })
     }
 
